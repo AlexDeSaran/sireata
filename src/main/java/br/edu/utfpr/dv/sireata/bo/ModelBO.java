@@ -5,7 +5,7 @@ import br.edu.utfpr.dv.sireata.dao.ModelDAO;
 
 public abstract class ModelBO<E> {
 
-    public enum BOS {
+    public enum ITEMS {
         ANEXODAO,
         ATADAO,
         ATAPARTICIPANTEDAO,
@@ -17,8 +17,9 @@ public abstract class ModelBO<E> {
         USUARIODAO
 
     }
-    public static ModelDAO from(BOS dataRetriever) {
-        
+
+    public static ModelDAO from(ITEMS dataRetriever) {
+
         switch (dataRetriever) {
             case ANEXODAO:
                 return new br.edu.utfpr.dv.sireata.bo.AnexoBO().getDAO();
@@ -42,6 +43,7 @@ public abstract class ModelBO<E> {
                 return null;
         }
     }
+
     public abstract ModelDAO getDAO();
 
 }
