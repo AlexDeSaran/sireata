@@ -5,75 +5,73 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import br.edu.utfpr.dv.sireata.dao.AnexoDAO;
+import br.edu.utfpr.dv.sireata.dao.ModelDAO;
 import br.edu.utfpr.dv.sireata.model.Anexo;
 
-public class AnexoBO {
+//segui o modelo exemplo do git do senhor utilizando os metodos comuns em todos os bo e dao.
+public class AnexoBO extends ModelBO {
 
-	public Anexo buscarPorId(int id) throws Exception{
-		try{
-			AnexoDAO dao = new AnexoDAO();
-			
-			return dao.buscarPorId(id);
-		}catch(Exception e){
+	public Anexo buscarPorId(int id) throws Exception {
+		try {
+
+			return getDAO().buscarPorId(id);
+		} catch (Exception e) {
 			Logger.getGlobal().log(Level.SEVERE, e.getMessage(), e);
-			
+
 			throw new Exception(e.getMessage());
 		}
 	}
-	
-	public List<Anexo> listarPorAta(int idAta) throws Exception{
-		try{
-			AnexoDAO dao = new AnexoDAO();
-			
-			return dao.listarPorAta(idAta);
-		}catch(Exception e){
+
+	public List<Anexo> listarPorAta(int idAta) throws Exception {
+		try {
+
+			return new AnexoDAO().listarPorAta(idAta);
+		} catch (Exception e) {
 			Logger.getGlobal().log(Level.SEVERE, e.getMessage(), e);
-			
+
 			throw new Exception(e.getMessage());
 		}
 	}
-	
-	public void validarDados(Anexo anexo) throws Exception{
-		if(anexo.getArquivo() == null){
+
+	public void validarDados(Anexo anexo) throws Exception {
+		if (anexo.getArquivo() == null) {
 			throw new Exception("Efetue o envio do arquivo.");
 		}
-		if(anexo.getDescricao().isEmpty()){
+		if (anexo.getDescricao().isEmpty()) {
 			throw new Exception("Informe a descrição do anexo.");
 		}
 	}
-	
-	public int salvar(Anexo anexo) throws Exception{
-		try{
-			if((anexo.getAta() == null) || (anexo.getAta().getIdAta() == 0)){
+
+	public int salvar(Anexo anexo) throws Exception {
+		try {
+			if ((anexo.getAta() == null) || (anexo.getAta().getIdAta() == 0)) {
 				throw new Exception("Informe a ata.");
 			}
-			
+
 			this.validarDados(anexo);
-			
-			AnexoDAO dao = new AnexoDAO();
-			
-			return dao.salvar(anexo);
-		}catch(Exception e){
+
+			return getDAO().salvar(anexo);
+		} catch (Exception e) {
 			Logger.getGlobal().log(Level.SEVERE, e.getMessage(), e);
-			
+
 			throw new Exception(e.getMessage());
 		}
 	}
-	
-	public void excluir(Anexo anexo) throws Exception{
-		this.excluir(anexo.getIdAnexo());
-	}
-	
-	public void excluir(int id) throws Exception{
-		try{
-			AnexoDAO dao = new AnexoDAO();
-			
-			dao.excluir(id);
-		}catch(Exception e){
+
+	public void excluir(int id) throws Exception {
+		try {
+
+			new AnexoDAO().excluir(id);
+		} catch (Exception e) {
 			Logger.getGlobal().log(Level.SEVERE, e.getMessage(), e);
-			
+
 			throw new Exception(e.getMessage());
 		}
 	}
-	
+	@Override
+	public ModelDAO<Anexo> getDAO() {
+		// TODO Auto-generated method stub
+		return new AnexoDAO();
+	}
+
 }
