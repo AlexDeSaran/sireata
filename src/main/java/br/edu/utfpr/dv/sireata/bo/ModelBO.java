@@ -2,7 +2,7 @@ package br.edu.utfpr.dv.sireata.bo;
 
 import br.edu.utfpr.dv.sireata.dao.AtaDAO;
 import br.edu.utfpr.dv.sireata.dao.ModelDAO;
-
+//SEGUINDO O MESMO PADRÃO DO SITE https://refactoring.guru/
 public abstract class ModelBO<E> {
 
     public enum ITEMS {
@@ -17,7 +17,6 @@ public abstract class ModelBO<E> {
         USUARIODAO
 
     }
-
     public static ModelDAO from(ITEMS dataRetriever) {
 
         switch (dataRetriever) {
