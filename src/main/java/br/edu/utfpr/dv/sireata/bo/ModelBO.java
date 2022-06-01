@@ -1,5 +1,4 @@
 package br.edu.utfpr.dv.sireata.bo;
-
 import br.edu.utfpr.dv.sireata.dao.AtaDAO;
 import br.edu.utfpr.dv.sireata.dao.ModelDAO;
 //SEGUINDO O MESMO PADRÃO DO https://github.com/gabrielcostasilva/dp-factory-method
