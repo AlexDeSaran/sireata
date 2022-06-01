@@ -2,20 +2,11 @@ package br.edu.utfpr.dv.sireata.bo;
 
 import br.edu.utfpr.dv.sireata.dao.AtaDAO;
 import br.edu.utfpr.dv.sireata.dao.ModelDAO;
-//SEGUINDO O MESMO PADRÃO DO SITE https://refactoring.guru/
+//SEGUINDO O MESMO PADRÃO DO https://github.com/gabrielcostasilva/dp-factory-method
 public abstract class ModelBO<E> {
 
     public enum ITEMS {
-        ANEXODAO,
-        ATADAO,
-        ATAPARTICIPANTEDAO,
-        CAMPUSDAO,
-        COMENTARIODAO,
-        DEPARTAMENTODAO,
-        ORGAODAO,
-        PAUTADAO,
-        USUARIODAO
-
+        ANEXODAO,ATADAO,ATAPARTICIPANTEDAO,CAMPUSDAO,COMENTARIODAO,DEPARTAMENTODAO,ORGAODAO,PAUTADAO,USUARIODAO
     }
     public static ModelDAO from(ITEMS dataRetriever) {
 
@@ -44,5 +35,4 @@ public abstract class ModelBO<E> {
     }
 
     public abstract ModelDAO getDAO();
-
 }
