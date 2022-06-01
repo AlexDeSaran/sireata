@@ -2,7 +2,6 @@ package br.edu.utfpr.dv.sireata.bo;
 import br.edu.utfpr.dv.sireata.dao.AtaDAO;
 import br.edu.utfpr.dv.sireata.dao.ModelDAO;
 //SEGUINDO O MESMO PADRÃO DO https://github.com/gabrielcostasilva/dp-factory-method NÃO USEI O NOME DE FACTORY PARA A CLASSE PARA NÃO CAUSAR CONFUSÃO.
-
 public abstract class ModelBO<E> {
 
     public enum ITEMS {
