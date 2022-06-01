@@ -3,7 +3,6 @@ package br.edu.utfpr.dv.sireata.bo;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 import br.edu.utfpr.dv.sireata.dao.AnexoDAO;
 import br.edu.utfpr.dv.sireata.dao.ModelDAO;
 import br.edu.utfpr.dv.sireata.model.Anexo;
