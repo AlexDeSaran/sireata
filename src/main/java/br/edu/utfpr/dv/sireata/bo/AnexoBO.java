@@ -8,7 +8,6 @@ import br.edu.utfpr.dv.sireata.dao.AnexoDAO;
 import br.edu.utfpr.dv.sireata.dao.ModelDAO;
 import br.edu.utfpr.dv.sireata.model.Anexo;
 
-//segui o modelo exemplo do git do senhor utilizando os metodos comuns em todos os bo e dao.
 public class AnexoBO extends ModelBO {
 
 	public Anexo buscarPorId(int id) throws Exception {
